@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu Personal</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background-image: url('https://via.placeholder.com/1500x500'); /* Poza de fundal pentru header */
+            background-size: cover;
+            color: black;  /* Textul devine negru */
+            padding: 80px 0;
+            text-align: center;
+            text-shadow: none;  /* Eliminat umbra textului */
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Main Content */
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bun venit în universul meu creativ!</h1>
+        <p>Explorați design-ul care aduce la viață idei inovative și experiențe vizuale de impact.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="despre.html">Despre</a>
+        <a href="proiecte.html">Proiecte</a>
+        <a href="contact.html">Contact</a>    
+    </nav>
+
+    <section id="content">
+        <h2 id="section-title"></h2>
+        <p id="section-content"></p>
+        <div class="buton-container">
+            <a href="contact.html" class="cta-button">Hai să discutăm despre proiectul tău!</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Portofoliu Personal</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let page = window.location.pathname.split("/").pop().replace(".html", "");
+            if (!page) page = "index";
+            
+            fetch("content.json")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("section-title").innerText = data[page].title;
+                    document.getElementById("section-content").innerHTML = data[page].content;
+                })
+                .catch(error => console.error("Eroare la încărcarea conținutului:", error));
+        });
+    </script>
+
+</body>
+</html>
