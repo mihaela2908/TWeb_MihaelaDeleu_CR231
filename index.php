@@ -111,10 +111,10 @@
     </header>
 
     <nav>
-        <a href="index.html">Acasă</a>
-        <a href="despre.html">Despre</a>
-        <a href="proiecte.html">Proiecte</a>
-        <a href="contact.html">Contact</a>    
+        <a href="index.php">Acasă</a>
+        <a href="despre.php">Despre</a>
+        <a href="proiecte.php">Proiecte</a>
+        <a href="contact.php">Contact</a>    
     </nav>
 
     <section id="content">

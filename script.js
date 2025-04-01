@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('formularContact').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        var nume = document.getElementById('nume').value.trim();
+        var nume = document.gestElementById('nume').value.trim();
         var email = document.getElementById('email').value.trim();
         var mesaj = document.getElementById('mesaj').value.trim();
 
